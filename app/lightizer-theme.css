@@ -1,0 +1,702 @@
+/* =========================================================
+   LIGHTIZER VISUAL SYSTEM
+   Centralized colors, gradients, effects and interactions.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. BRAND COLORS
+   --------------------------------------------------------- */
+
+:root {
+  /* Core Lightizer brand colors. */
+  --lightizer-blue: #1687ff;
+  --lightizer-purple: #7047ff;
+
+  /* Main brand gradient. */
+  --lightizer-gradient: linear-gradient(135deg,
+      var(--lightizer-blue),
+      var(--lightizer-purple));
+
+  /* Soft brand gradient for backgrounds. */
+  --lightizer-gradient-soft: linear-gradient(135deg,
+      rgba(22, 135, 255, 0.12),
+      rgba(112, 71, 255, 0.12));
+}
+
+
+/* ---------------------------------------------------------
+   2. LIGHT MODE
+   --------------------------------------------------------- */
+
+:root {
+  --background: #f5f7ff;
+  --secondary-bg: #f1f3f6;
+  --card: #ffffff;
+
+  --foreground: #111318;
+  --muted: #626873;
+  --text-secondary: #626873;
+
+  --border: #e1e4e8;
+
+  --accent: var(--lightizer-blue);
+}
+
+
+/* ---------------------------------------------------------
+   3. DARK MODE
+   --------------------------------------------------------- */
+
+:root[data-theme="dark"] {
+  --background: #090b0f;
+  --secondary-bg: #0f1217;
+  --card: #141820;
+
+  --foreground: #f4f6f8;
+  --muted: #969da8;
+  --text-secondary: #969da8;
+
+  --border: #252b35;
+
+  --accent: var(--lightizer-blue);
+}
+
+
+/* ---------------------------------------------------------
+   4. GLOBAL COLOR BEHAVIOR
+   --------------------------------------------------------- */
+
+/* Smoothly transition the main visual surfaces. */
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+
+  transition:
+    background-color 350ms ease,
+    color 350ms ease;
+}
+
+
+/* ---------------------------------------------------------
+   5. BRAND GRADIENT TEXT
+   --------------------------------------------------------- */
+
+.lightizer-gradient-text {
+  background: var(--lightizer-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+/* ---------------------------------------------------------
+   6. BRAND GRADIENT BACKGROUND
+   --------------------------------------------------------- */
+
+.lightizer-gradient {
+  background: var(--lightizer-gradient);
+}
+
+
+/* ---------------------------------------------------------
+   7. SOFT BRAND BACKGROUND
+   --------------------------------------------------------- */
+
+.lightizer-gradient-soft {
+  background: var(--lightizer-gradient-soft);
+}
+
+
+/* ---------------------------------------------------------
+   8. LIGHTIZER GLOW
+   --------------------------------------------------------- */
+
+.lightizer-glow {
+  box-shadow:
+    0 0 40px rgba(22, 135, 255, 0.16),
+    0 0 90px rgba(112, 71, 255, 0.08);
+}
+
+
+/* Stronger glow for important interactive elements. */
+.lightizer-glow-strong {
+  box-shadow:
+    0 0 35px rgba(22, 135, 255, 0.22),
+    0 0 80px rgba(112, 71, 255, 0.16);
+}
+
+
+/* ---------------------------------------------------------
+   9. GLASS EFFECT
+   --------------------------------------------------------- */
+
+.lightizer-glass {
+  background: color-mix(in srgb,
+      var(--card) 78%,
+      transparent);
+
+  border: 1px solid var(--border);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* ---------------------------------------------------------
+   10. INTERACTIVE CARD
+   --------------------------------------------------------- */
+
+.lightizer-card {
+  border: 1px solid var(--border);
+  background: var(--card);
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    background-color 300ms ease;
+}
+
+
+/* Card interaction. */
+.lightizer-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(22, 135, 255, 0.45);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.08),
+    0 0 35px rgba(22, 135, 255, 0.08);
+}
+
+
+/* Dark-mode card shadow adjustment. */
+:root[data-theme="dark"] .lightizer-card:hover {
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 45px rgba(22, 135, 255, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   11. INTERACTIVE BORDER
+   --------------------------------------------------------- */
+
+.lightizer-border {
+  border: 1px solid var(--border);
+
+  transition:
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+
+.lightizer-border:hover {
+  border-color: rgba(22, 135, 255, 0.5);
+
+  box-shadow:
+    0 0 25px rgba(22, 135, 255, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   12. TECHNICAL GRID
+   --------------------------------------------------------- */
+
+.lightizer-grid {
+  background-image:
+    linear-gradient(rgba(22, 135, 255, 0.06) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(112, 71, 255, 0.06) 1px,
+      transparent 1px);
+
+  background-size: 50px 50px;
+}
+
+
+/* ---------------------------------------------------------
+   13. AMBIENT BLUE GLOW
+   --------------------------------------------------------- */
+
+.lightizer-blue-glow {
+  background: rgba(22, 135, 255, 0.12);
+  filter: blur(100px);
+}
+
+
+/* ---------------------------------------------------------
+   14. AMBIENT PURPLE GLOW
+   --------------------------------------------------------- */
+
+.lightizer-purple-glow {
+  background: rgba(112, 71, 255, 0.12);
+  filter: blur(120px);
+}
+
+
+/* ---------------------------------------------------------
+   15. BUTTON INTERACTION
+   --------------------------------------------------------- */
+
+.lightizer-button {
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    opacity 200ms ease;
+}
+
+
+.lightizer-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(22, 135, 255, 0.18);
+}
+
+
+.lightizer-button:active {
+  transform: translateY(0);
+}
+
+
+/* ---------------------------------------------------------
+   16. FOCUS ACCESSIBILITY
+   --------------------------------------------------------- */
+
+.lightizer-button:focus-visible,
+.lightizer-card:focus-visible,
+.lightizer-border:focus-visible {
+  outline: 2px solid var(--lightizer-blue);
+  outline-offset: 4px;
+}
+
+
+/* ---------------------------------------------------------
+   17. TEXT SELECTION
+   --------------------------------------------------------- */
+
+::selection {
+  background: var(--lightizer-blue);
+  color: white;
+}
+
+
+/* ---------------------------------------------------------
+   18. SUBTLE FLOATING ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes lightizer-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+
+/* Apply only where we intentionally want ambient movement. */
+.lightizer-float {
+  animation: lightizer-float 5s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   19. REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .lightizer-float {
+    animation: none;
+  }
+
+  .lightizer-card,
+  .lightizer-border,
+  .lightizer-button {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   LIGHTIZER MOTION SYSTEM
+   Reusable animations used throughout the website.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. FADE + SLIDE UP
+   --------------------------------------------------------- */
+
+/* Used when sections or content enter the viewport. */
+@keyframes lightizer-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Reusable fade-up animation class. */
+.lightizer-fade-up {
+  animation: lightizer-fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+/* ---------------------------------------------------------
+   2. FADE IN
+   --------------------------------------------------------- */
+
+@keyframes lightizer-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Simple fade-in animation. */
+.lightizer-fade {
+  animation: lightizer-fade 800ms ease both;
+}
+
+
+/* ---------------------------------------------------------
+   3. SCALE IN
+   --------------------------------------------------------- */
+
+@keyframes lightizer-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Used for cards and visual elements. */
+.lightizer-scale {
+  animation: lightizer-scale 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+/* ---------------------------------------------------------
+   4. STAGGERED ANIMATION
+   --------------------------------------------------------- */
+
+/* These delays allow cards to appear one after another. */
+.lightizer-delay-1 {
+  animation-delay: 100ms;
+}
+
+.lightizer-delay-2 {
+  animation-delay: 200ms;
+}
+
+.lightizer-delay-3 {
+  animation-delay: 300ms;
+}
+
+.lightizer-delay-4 {
+  animation-delay: 400ms;
+}
+
+.lightizer-delay-5 {
+  animation-delay: 500ms;
+}
+
+
+/* ---------------------------------------------------------
+   5. FLOATING ELEMENT
+   --------------------------------------------------------- */
+
+@keyframes lightizer-float-soft {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+/* Gentle continuous floating movement. */
+.lightizer-float-soft {
+  animation: lightizer-float-soft 5s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   6. SLOW ROTATION
+   --------------------------------------------------------- */
+
+@keyframes lightizer-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Used for decorative rings and system visuals. */
+.lightizer-rotate-slow {
+  animation: lightizer-rotate 30s linear infinite;
+}
+
+
+/* ---------------------------------------------------------
+   7. PULSE / BREATHING GLOW
+   --------------------------------------------------------- */
+
+@keyframes lightizer-pulse {
+
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+
+/* Used for small technology indicators and ambient lights. */
+.lightizer-pulse {
+  animation: lightizer-pulse 3s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   8. GRADIENT MOVEMENT
+   --------------------------------------------------------- */
+
+@keyframes lightizer-gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Slowly moves the Lightizer gradient. */
+.lightizer-animated-gradient {
+  background-size: 200% 200%;
+  animation: lightizer-gradient-move 8s ease infinite;
+}
+
+
+/* ---------------------------------------------------------
+   9. GLOWING BORDER
+   --------------------------------------------------------- */
+
+@keyframes lightizer-border-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(22, 135, 255, 0);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(22, 135, 255, 0.12),
+      0 0 50px rgba(112, 71, 255, 0.06);
+  }
+}
+
+
+/* Subtle animated glow around important elements. */
+.lightizer-border-glow {
+  animation: lightizer-border-glow 4s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   10. BACKGROUND GRID MOVEMENT
+   --------------------------------------------------------- */
+
+@keyframes lightizer-grid-move {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 50px 50px;
+  }
+}
+
+
+/* Slowly moves technical grid backgrounds. */
+.lightizer-animated-grid {
+  animation: lightizer-grid-move 12s linear infinite;
+}
+
+
+/* ---------------------------------------------------------
+   11. REVEAL MASK
+   --------------------------------------------------------- */
+
+@keyframes lightizer-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+
+/* Useful for headings and large visual elements. */
+.lightizer-reveal {
+  animation: lightizer-reveal 900ms cubic-bezier(0.77, 0, 0.18, 1) both;
+}
+
+
+/* ---------------------------------------------------------
+   12. HOVER LIFT
+   --------------------------------------------------------- */
+
+.lightizer-hover-lift {
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 300ms ease,
+    border-color 300ms ease;
+}
+
+
+.lightizer-hover-lift:hover {
+  transform: translateY(-6px);
+}
+
+
+/* ---------------------------------------------------------
+   13. GLOWING TEXT
+   --------------------------------------------------------- */
+
+.lightizer-glow-text {
+  text-shadow:
+    0 0 20px rgba(22, 135, 255, 0.18),
+    0 0 40px rgba(112, 71, 255, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   14. ANIMATED ORBIT
+   --------------------------------------------------------- */
+
+@keyframes lightizer-orbit {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+
+/* Small elements can orbit around a central visual. */
+.lightizer-orbit {
+  animation: lightizer-orbit 12s linear infinite;
+}
+
+
+/* ---------------------------------------------------------
+   15. REDUCED MOTION SUPPORT
+   --------------------------------------------------------- */
+
+/*
+  Visitors who have enabled reduced motion on their device
+  should not receive continuous animations.
+*/
+@media (prefers-reduced-motion: reduce) {
+
+  .lightizer-fade-up,
+  .lightizer-fade,
+  .lightizer-scale,
+  .lightizer-float-soft,
+  .lightizer-rotate-slow,
+  .lightizer-pulse,
+  .lightizer-animated-gradient,
+  .lightizer-border-glow,
+  .lightizer-animated-grid,
+  .lightizer-reveal,
+  .lightizer-orbit {
+    animation: none !important;
+  }
+
+  .lightizer-hover-lift {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   LIGHTIZER SCROLL REVEAL
+   Elements begin slightly lower and transparent, then
+   smoothly move into place when they enter the viewport.
+   ========================================================= */
+
+.lightizer-scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Prevent hidden elements from interfering with layout. */
+  will-change: opacity, transform;
+}
+
+/* State applied after the element enters the viewport. */
+.lightizer-scroll-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   Users who prefer reduced motion should see the content
+   immediately without the entrance animation.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .lightizer-scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

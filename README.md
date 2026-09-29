@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lightizer Technologies
 
-## Getting Started
+A modern interactive portfolio exploring the intersection of **design, software development, data, and artificial intelligence**.
 
-First, run the development server:
+Lightizer Technologies focuses on turning ideas into thoughtful digital experiences and intelligent solutions. This portfolio showcases selected projects, interactive demos, experiments, and technical work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What’s Inside
+
+The portfolio brings together work across:
+
+- **UI/UX Design** — interfaces, product thinking, and user-focused experiences
+- **Web Development** — responsive and interactive web applications
+- **Data** — Python, data analysis, and visualization
+- **AI / Machine Learning** — predictive models and intelligent systems
+
+## Featured Work
+
+### HumaniTrack AI
+
+An AI-focused humanitarian system exploring how technology and intelligent tools can support humanitarian workflows and decision-making.
+
+### Customer Churn Predictor
+
+A machine learning project designed to predict customer churn using customer data and classification techniques.
+
+### AQI Explorer
+
+A Python data analysis and visualization project for exploring Air Quality Index data.
+
+### Regression Analysis
+
+A project exploring regression techniques and relationships within data.
+
+## Interactive Playground
+
+The Playground is where experimental concepts, interface ideas, and interactive experiences come to life.
+
+### NOVA
+
+A fictional e-commerce experience created as a web development demonstration.
+
+NOVA explores a complete interactive shopping experience, including:
+
+- Responsive product collection
+- Product quick view
+- Shopping cart and quantity management
+- Multi-step checkout
+- Delivery selection
+- Demo payment experience
+- Order confirmation
+- Mobile-responsive interactions
+
+### Finora
+
+A UI/UX concept exploring modern digital product design, visual hierarchy, interaction, and interface thinking.
+
+## Lightizer AI
+
+Lightizer AI is an assistant experience designed to help visitors explore the portfolio, projects, capabilities, and ideas behind Lightizer Technologies.
+
+## Technology
+
+Built with technologies and tools including:
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- JavaScript
+- Python
+- Machine Learning
+
+## Project Structure
+
+```text
+lightizer/
+├── app/
+│   ├── api/
+│   ├── demos/
+│   │   ├── finora/
+│   │   └── nova/
+│   ├── projects/
+│   └── work/
+├── components/
+│   └── nova/
+├── public/
+│   └── images/
+└── README.md
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

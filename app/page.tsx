@@ -1,64 +1,77 @@
-// Import the main homepage components
+// =====================================================
+// LIGHTIZER TECHNOLOGIES — HOMEPAGE
+// =====================================================
+
+// Import the entrance experience.
+import LightizerIntro from "@/components/LightizerIntro";
+
+// Import the main homepage components.
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import LightizerSystem from "@/components/LightizerSystem";
 import WhatIDo from "@/components/WhatIDo";
 import About from "@/components/About";
 import SelectedWork from "@/components/SelectedWork";
-// Import the Playground section.
 import Playground from "@/components/Playground";
-// Import the Currently Exploring section.
 import CurrentlyExploring from "@/components/CurrentlyExploring";
-// Import the Lightizer Technologies section.
 import LightizerTechnologies from "@/components/LightizerTechnologies";
-// Import the Contact section.
 import Contact from "@/components/Contact";
-// Import the Footer section.
 import Footer from "@/components/Footer";
-// Import the Lightizer AI assistant.
 import LightizerAI from "@/components/LightizerAI";
+
+
+// =====================================================
+// HOMEPAGE
+// =====================================================
 
 export default function Home() {
   return (
-    // Main homepage wrapper
-    <main>
+    <>
+      {/* =================================================
+          LIGHTIZER ENTRANCE
+          ================================================= */}
+      <LightizerIntro />
 
-      {/* Fixed navigation */}
-      <Navbar />
+      {/* =================================================
+          MAIN WEBSITE
+          ================================================= */}
+      <main>
+        {/* Fixed navigation */}
+        <Navbar />
 
-      {/* Hero introduction */}
-      <Hero />
+        {/* Hero introduction */}
+        <Hero />
 
-      {/* Interactive Lightizer system */}
-      <LightizerSystem />
+        {/* Interactive Lightizer system */}
+        <LightizerSystem />
 
-      {/* Main areas of work */}
-      <WhatIDo />
+        {/* Main areas of work */}
+        <WhatIDo />
 
-      {/* About Chukwuka */}
-      <About />
+        {/* About */}
+        <About />
 
-      {/* Selected projects */}
-      <SelectedWork />
+        {/* Selected projects */}
+        <SelectedWork />
 
-      {/* Interactive experiments */}
-      <Playground />
+        {/* Interactive experiments */}
+        <Playground />
 
-      {/* Areas currently being explored */}
-      <CurrentlyExploring />
+        {/* Currently exploring */}
+        <CurrentlyExploring />
 
-      {/* Lightizer Technologies brand section */}
-      <LightizerTechnologies />
+        {/* Lightizer Technologies */}
+        <LightizerTechnologies />
 
-      {/* Contact section */}
-      <Contact />
+        {/* Contact */}
+        <Contact />
 
-      {/* Website footer */}
-      <Footer />
+        {/* Footer */}
+        <Footer />
 
-      {/* Floating Lightizer AI assistant */}
-      <LightizerAI />
-
-    </main>
+        {/* Floating Lightizer AI assistant */}
+        <LightizerAI />
+      </main>
+    </>
   );
 }
